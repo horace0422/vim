@@ -1,6 +1,8 @@
 AutoComplPop
 bufexplorer
+ctrlp.vim
 neobundle.vim
 neocomplcache.vim
 nerdtree
+vim-fakeclip
 vimproc
