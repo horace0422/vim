@@ -58,5 +58,15 @@ set backspace=2            "按下backspace會後退，道行首後會刪除到�
 set showmatch              "顯示括號配對情況
 set nocompatible           "用vim的特性去運行，捨棄vi的特性
 
-
-
+" vim statusline
+set laststatus=2
+set statusline=%4*%<\ %1*[%F]
+set statusline+=%4*\ %5*[%{&encoding}, " encoding
+set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
+set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+highlight User1 ctermfg=red
+highlight User2 term=underline cterm=underline ctermfg=green
+highlight User3 term=underline cterm=underline ctermfg=yellow
+highlight User4 term=underline cterm=underline ctermfg=white
+highlight User5 ctermfg=cyan
+highlight User6 ctermfg=white
