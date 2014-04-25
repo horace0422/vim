@@ -22,6 +22,7 @@ NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'vim-scripts/Pydiction'
 
 
 filetype plugin indent on     " Required!
