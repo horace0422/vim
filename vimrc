@@ -35,8 +35,28 @@ filetype plugin indent on     " Required!
 NeoBundleCheck
 
 syntax on
-set t_Co=256
 colorscheme zenburn
+
+nnoremap <silent> <F5> :NERDTree<CR>
+
+set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,big5,latin1
+set fileencoding=utf-8
+set termencoding=utf-8
+set number              " 行號
+set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
+set ai                     " 自動縮排
+set list            
+set listchars=tab:>_,trail:_
+set tabstop=4              " tab使用四個空白取代
+set shiftwidth=4           " 縮排空白數，要搭配set cin使用
+set cin
+set cursorline             " 該行的線
+set t_Co=256               " 支援 256 色
+set textwidth=0
+set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
+set showmatch              "顯示括號配對情況
+set nocompatible           "用vim的特性去運行，捨棄vi的特性
 
 
 
