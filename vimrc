@@ -1,44 +1,43 @@
 if has('vim_starting')
 	set nocompatible               " Be iMproved
+
+	" Required:
 	set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-	
-call neobundle#rc(expand('~/.vim/bundle/'))
-	
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 " Let NeoBundle manage NeoBundle
+" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" Recommended to install
 " My Bundles here:
-"
-" Note: You don't set neobundle setting in .gvimrc!
-" Original repos on github
-
-" -> TO DO <-
+"NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-scripts/AutoComplPop'
-NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'vim-scripts/Pydiction'
 
+" You can specify revision/branch/tag.
+"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
-filetype plugin indent on     " Required!
-"
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+call neobundle#end()
 
-" Installation check.
+" Required:
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
 NeoBundleCheck
 
+nnoremap <silent> <F5> :NERDTree<CR>
+
+" VIM settings
 syntax on
 colorscheme zenburn
-
-nnoremap <silent> <F5> :NERDTree<CR>
 
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,big5,latin1
@@ -46,7 +45,7 @@ set fileencoding=utf-8
 set termencoding=utf-8
 set number              " 行號
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
-set ai                     " 自動縮排
+"set ai                     " 自動縮排
 set list            
 set listchars=tab:>_,trail:_
 set tabstop=4              " tab使用四個空白取代
