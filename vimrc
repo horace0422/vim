@@ -13,7 +13,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-"NeoBundle 'Shougo/neocomplcache.vim'
+NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'jlanzarotta/bufexplorer'

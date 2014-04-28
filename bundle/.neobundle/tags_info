@@ -3,5 +3,6 @@ Pydiction
 bufexplorer
 ctrlp.vim
 neobundle.vim
+neocomplcache.vim
 nerdtree
 vim-fakeclip
