@@ -98,6 +98,10 @@
 :CtrlPTag	ctrlp.txt	/*:CtrlPTag*
 :CtrlPUndo	ctrlp.txt	/*:CtrlPUndo*
 :FakeclipDefaultKeyMappings	fakeclip.txt	/*:FakeclipDefaultKeyMappings*
+:GSessionEliminateAll	gsession.txt	/*:GSessionEliminateAll*
+:GSessionMake	gsession.txt	/*:GSessionMake*
+:GSessionMakeLocal	gsession.txt	/*:GSessionMakeLocal*
+:GSessioneLiminateCurrent	gsession.txt	/*:GSessioneLiminateCurrent*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeCWD	NERD_tree.txt	/*:NERDTreeCWD*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
@@ -105,6 +109,10 @@
 :NERDTreeFromBookmark	NERD_tree.txt	/*:NERDTreeFromBookmark*
 :NERDTreeMirror	NERD_tree.txt	/*:NERDTreeMirror*
 :NERDTreeToggle	NERD_tree.txt	/*:NERDTreeToggle*
+:NamedSessionLoad	gsession.txt	/*:NamedSessionLoad*
+:NamedSessionLoadCwd	gsession.txt	/*:NamedSessionLoadCwd*
+:NamedSessionMake	gsession.txt	/*:NamedSessionMake*
+:NamedSessionMakeCwd	gsession.txt	/*:NamedSessionMakeCwd*
 :Neco	neocomplcache.txt	/*:Neco*
 :NeoBundle	neobundle.txt	/*:NeoBundle*
 :NeoBundleCheck	neobundle.txt	/*:NeoBundleCheck*
@@ -373,6 +381,7 @@ g:ctrlp_persistent_input	ctrlp.txt	/*g:ctrlp_persistent_input*
 g:ctrlp_regexp_search	ctrlp.txt	/*g:ctrlp_regexp_search*
 g:fakeclip_no_default_key_mappings	fakeclip.txt	/*g:fakeclip_no_default_key_mappings*
 g:fakeclip_terminal_multiplexer_type	fakeclip.txt	/*g:fakeclip_terminal_multiplexer_type*
+g:gsession_non_default_mapping	gsession.txt	/*g:gsession_non_default_mapping*
 g:neobundle#default_options	neobundle.txt	/*g:neobundle#default_options*
 g:neobundle#default_site	neobundle.txt	/*g:neobundle#default_site*
 g:neobundle#enable_name_conversion	neobundle.txt	/*g:neobundle#enable_name_conversion*
@@ -460,6 +469,15 @@ g:neocomplcache_use_vimproc	neocomplcache.txt	/*g:neocomplcache_use_vimproc*
 g:neocomplcache_vim_completefuncs	neocomplcache.txt	/*g:neocomplcache_vim_completefuncs*
 g:neocomplcache_wildcard_characters	neocomplcache.txt	/*g:neocomplcache_wildcard_characters*
 g:unite_source_neobundle_install_max_processes	neobundle.txt	/*g:unite_source_neobundle_install_max_processes*
+gsession	gsession.txt	/*gsession*
+gsession-commands	gsession.txt	/*gsession-commands*
+gsession-configuration	gsession.txt	/*gsession-configuration*
+gsession-contents	gsession.txt	/*gsession-contents*
+gsession-installation	gsession.txt	/*gsession-installation*
+gsession-introduction	gsession.txt	/*gsession-introduction*
+gsession-key-mappings	gsession.txt	/*gsession-key-mappings*
+gsession-usage	gsession.txt	/*gsession-usage*
+gsession.txt	gsession.txt	/*gsession.txt*
 i_<Plug>(fakeclip-insert)	fakeclip.txt	/*i_<Plug>(fakeclip-insert)*
 i_<Plug>(fakeclip-insert-o)	fakeclip.txt	/*i_<Plug>(fakeclip-insert-o)*
 i_<Plug>(fakeclip-insert-p)	fakeclip.txt	/*i_<Plug>(fakeclip-insert-p)*

@@ -2,7 +2,9 @@ AutoComplPop
 Pydiction
 bufexplorer
 ctrlp.vim
+gsession.vim
 neobundle.vim
 neocomplcache.vim
 nerdtree
+pydiction
 vim-fakeclip

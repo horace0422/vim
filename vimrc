@@ -1,8 +1,9 @@
-if has('vim_starting')
-	set nocompatible               " Be iMproved
 
-	" Required:
-	set runtimepath+=~/.vim/bundle/neobundle.vim/
+if has('vim_starting')
+    set nocompatible
+
+    " Required:
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 " Required:
@@ -15,11 +16,14 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 NeoBundle 'Shougo/neocomplcache.vim'
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'rkulla/pydiction.git'
+NeoBundle 'c9s/gsession.vim'
+NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'vim-scripts/Pydiction'
+
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -71,3 +75,6 @@ highlight User3 term=underline cterm=underline ctermfg=yellow
 highlight User4 term=underline cterm=underline ctermfg=white
 highlight User5 ctermfg=cyan
 highlight User6 ctermfg=white
+
+let g:pydiction_location = '/path/to/complete-dict'
+let g:pydiction_menu_height = 20
