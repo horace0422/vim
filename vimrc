@@ -43,7 +43,7 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,big5,latin1
 set fileencoding=utf-8
 set termencoding=utf-8
-set number              " 行號
+"set number              " 行號
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 "set ai                     " 自動縮排
 set list            
