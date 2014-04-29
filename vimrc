@@ -1,4 +1,3 @@
-
 if has('vim_starting')
     set nocompatible
 
@@ -37,22 +36,50 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+
+"---------------------------------------------------------------------------
+" SHORTCUTS SETTINGS
+"---------------------------------------------------------------------------
 nnoremap <silent> <F5> :NERDTree<CR>
 
-" VIM settings
+
+"---------------------------------------------------------------------------
+" ENCODING SETTINGS
+"---------------------------------------------------------------------------
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+
+fun! ViewUTF8()
+	set encoding=utf-8
+	set termencoding=big5
+endfun
+"
+fun! UTF8()
+	set encoding=utf-8
+	set termencoding=big5
+	set fileencoding=utf-8
+	set fileencodings=ucs-bom,big5,utf-8,latin1
+endfun
+
+fun! Big5()
+	set encoding=big5
+	set fileencoding=big5
+endfun
+
+
 syntax on
 colorscheme zenburn
+"colorscheme moria
 
-set encoding=utf-8
-set fileencodings=ucs-bom,utf-8,big5,latin1
-set fileencoding=utf-8
-set termencoding=utf-8
+"set guifont=MONACO\ 20
 set mouse=a
 "set number              " 行號
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 "set ai                     " 自動縮排
-set list            
-set listchars=tab:>_,trail:_
+set list 
+set listchars=tab:>_,trail:.
 set tabstop=4              " tab使用四個空白取代
 set shiftwidth=4           " 縮排空白數，要搭配set cin使用
 set cin
@@ -62,6 +89,7 @@ set textwidth=0
 set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
 set showmatch              "顯示括號配對情況
 set nocompatible           "用vim的特性去運行，捨棄vi的特性
+set hlsearch
 
 " vim statusline
 set laststatus=2
