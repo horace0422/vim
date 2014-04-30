@@ -52,8 +52,6 @@ highlight User4 term=underline cterm=underline ctermfg=white
 highlight User5 ctermfg=cyan
 highlight User6 ctermfg=white
 
-let g:pydiction_location = '/path/to/complete-dict'
-let g:pydiction_menu_height = 20
 
 "---------------------------------------------------------------------------
 " Encoding
@@ -88,7 +86,9 @@ colorscheme zenburn
 "colorscheme moria
 set t_Co=256
 "set background=dark
-
+set guifont=MONACO:h12
+"set guifont=courier_new:h14
+"set guifont=DejaVu_Sans_Mono:h16:b
 "---------------------------------------------------------------------------
 " Tab and Spacebar
 "---------------------------------------------------------------------------
@@ -101,7 +101,6 @@ set tabstop=4              " tab使用空白取代
 "---------------------------------------------------------------------------
 " Tab and Spacebar
 "---------------------------------------------------------------------------
-"set guifont=MONACO\ 20
 set mouse=a
 "set number                " 行號
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
@@ -120,3 +119,8 @@ set history=500
 "---------------------------------------------------------------------------
 nnoremap <silent> <F5> :NERDTree<CR>
 set pastetoggle=<F12>
+
+
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_menu_height = 20
+
