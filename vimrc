@@ -83,7 +83,7 @@ set shiftwidth=4           " 縮排空白數，要搭配set cin使用
 set tabstop=4              " tab使用空白取代
 
 "---------------------------------------------------------------------------
-" Tab and Spacebar
+" Other
 "---------------------------------------------------------------------------
 set mouse=a
 "set number                " 行號
@@ -97,6 +97,8 @@ set nocompatible           "用vim的特性去運行，捨棄vi的特性
 set hlsearch
 set incsearch
 set history=500
+
+"set fdm=indent
 
 "---------------------------------------------------------------------------
 " Shortcuts
@@ -119,7 +121,11 @@ highlight User4 term=underline cterm=underline ctermfg=white
 highlight User5 ctermfg=cyan
 highlight User6 ctermfg=white
 
-
+"---------------------------------------------------------------------------
+" package settings
+"---------------------------------------------------------------------------
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
+
+let NERDTreeIgnore = ['\.pyc$']
 
