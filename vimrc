@@ -66,8 +66,9 @@ endfun
 " Theme
 "---------------------------------------------------------------------------
 syntax on
-colorscheme zenburn
-"colorscheme moria
+"colorscheme zenburn
+colorscheme obsidian
+"colorscheme wombat256mod
 set t_Co=256
 "set background=dark
 set guifont=MONACO:h12
@@ -90,6 +91,7 @@ set mouse=a
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
 set ai                     " 自動縮排
 set cursorline             " 該行的線
+"set cursorcolumn
 set textwidth=0
 set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
 set showmatch              "顯示括號配對情況
