@@ -1,10 +1,11 @@
 AutoComplPop
+FuzzyFinder
 Pydiction
 bufexplorer
 ctrlp.vim
-gsession.vim
 neobundle.vim
 neocomplcache.vim
 nerdtree
 pydiction
+taglist.vim
 vim-fakeclip

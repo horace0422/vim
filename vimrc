@@ -19,9 +19,10 @@ NeoBundle 'jlanzarotta/bufexplorer'
 NeoBundle 'kana/vim-fakeclip'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'rkulla/pydiction.git'
-NeoBundle 'c9s/gsession.vim'
 NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'vim-scripts/Pydiction'
+NeoBundle 'vim-scripts/taglist.vim'
+"NeoBundle 'vim-scripts/FuzzyFinder'
 
 
 " You can specify revision/branch/tag.
@@ -71,7 +72,7 @@ colorscheme obsidian
 "colorscheme wombat256mod
 set t_Co=256
 "set background=dark
-set guifont=MONACO:h12
+set guifont=Monaco:h11
 "set guifont=courier_new:h14
 "set guifont=DejaVu_Sans_Mono:h16:b
 "---------------------------------------------------------------------------
@@ -102,11 +103,13 @@ set history=500
 
 "set fdm=indent
 
+filetype on
 "---------------------------------------------------------------------------
 " Shortcuts
 "---------------------------------------------------------------------------
 "nnoremap <silent> <F5> :NERDTree<CR>
 map<F5> :NERDTreeToggle<CR>
+map<F6> :TlistToggle<CR>
 set pastetoggle=<F12>
 
 "---------------------------------------------------------------------------
