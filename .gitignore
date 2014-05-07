@@ -1,4 +1,1 @@
 *.pyc
-bundle/*
-bundle/.*
-!bundle/neobundle.vim
