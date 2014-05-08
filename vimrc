@@ -13,16 +13,18 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
-NeoBundle 'Shougo/neocomplcache.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'jlanzarotta/bufexplorer'
-NeoBundle 'kana/vim-fakeclip'
+NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
+NeoBundle 'scrooloose/nerdtree'				"檔案總管
+NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換
+NeoBundle 'kana/vim-fakeclip'				
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'rkulla/pydiction.git'
 NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'vim-scripts/Pydiction'
 NeoBundle 'vim-scripts/taglist.vim'
 "NeoBundle 'vim-scripts/FuzzyFinder'
+"
+NeoBundle 'chusiang/vim-sdcv'				"字典
 
 
 " You can specify revision/branch/tag.
@@ -72,7 +74,6 @@ syntax on
 colorscheme obsidian
 "colorscheme wombat256mod
 set t_Co=256
-"set background=dark
 set guifont=Monaco:h11
 "
 "---------------------------------------------------------------------------
@@ -108,14 +109,24 @@ set history=1000
 
 "set fdm=indent
 
-
+"sdcv
+function! Mydict()
+	let expl=system('sdcv -n ' . expand("<cword>"))
+	windo if expand("%")=="diCt-tmp" | q!|endif
+	25vsp diCt-tmp
+	setlocal buftype=nofile bufhidden=hide noswapfile
+	1s/^/\=expl/
+	1
+endfunction
+nmap F :call Mydict()<CR>
 "---------------------------------------------------------------------------
 " Shortcuts
 "---------------------------------------------------------------------------
 "nnoremap <silent> <F5> :NERDTree<CR>
 map<F5> :NERDTreeToggle<CR>
 map<F6> :TlistToggle<CR>
-set pastetoggle=<F12>
+"nmap <leader>w :call SearchWord()<CR>
+set pastetoggle=<F12>						"縮排快速開關，貼上文字時使用，防止自動縮排
 
 "---------------------------------------------------------------------------
 " statusline
