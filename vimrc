@@ -1,3 +1,14 @@
+" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+" Setting up Vundle - the vim plugin bundler
+
+let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+if !filereadable(neobundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/
+endif
+
 if has('vim_starting')
     set nocompatible
 
@@ -95,7 +106,7 @@ set smartindent            "智能对齐方式
 "set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s     " 设置C/C++语言的具体缩进方式
 set wrap                   "自动换行
 set linebreak              "整词换行
-set mouse=a
+set mouse=nv
 "set number                "行號
 set cursorline             "該行的線
 "set cursorcolumn
