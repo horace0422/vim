@@ -6,7 +6,7 @@ if !filereadable(neobundle_readme)
   echo "Installing Vundle.."
   echo ""
   silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/
+  silent !git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
 endif
 
 if has('vim_starting')
