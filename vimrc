@@ -34,7 +34,7 @@ NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'vim-scripts/Pydiction'
 NeoBundle 'vim-scripts/taglist.vim'
 "NeoBundle 'vim-scripts/FuzzyFinder'
-"
+"NeoBundle 'vim-scripts/L9'
 NeoBundle 'chusiang/vim-sdcv'				"字典
 
 
@@ -117,7 +117,7 @@ set nocompatible           "用vim的特性去運行，捨棄vi的特性
 set hlsearch               "搜尋反白
 set incsearch              "搜尋即時查找
 set history=1000
-
+set clipboard=unnamedplus  "同少剪貼簿，相關套件 sudo apt-get install vim-gtk
 "set fdm=indent
 
 "sdcv
