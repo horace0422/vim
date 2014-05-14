@@ -37,7 +37,6 @@ NeoBundle 'vim-scripts/taglist.vim'
 "NeoBundle 'vim-scripts/L9'
 NeoBundle 'chusiang/vim-sdcv'				"字典
 
-
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -79,11 +78,11 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 "---------------------------------------------------------------------------
 " Theme
 "---------------------------------------------------------------------------
-filetype on                "文件类型检测
+filetype on                "文件类型检测，自動判斷要載入的語法補完
 syntax on
 "colorscheme zenburn
 colorscheme obsidian
-"colorscheme wombat256mod
+"colorscheme codeschool
 set t_Co=256
 set guifont=Monaco:h11
 "
@@ -106,10 +105,11 @@ set smartindent            "智能对齐方式
 "set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s     " 设置C/C++语言的具体缩进方式
 set wrap                   "自动换行
 set linebreak              "整词换行
-set mouse=nv
-"set number                "行號
-set cursorline             "該行的線
-"set cursorcolumn
+set mouse=a
+set number                "行號
+set cursorline             "游標水平線
+"set cursorcolumn          "游標重直線
+"set colorcolumn=80
 set textwidth=0
 set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
 set showmatch              "顯示括號配對情況
