@@ -36,6 +36,7 @@ NeoBundle 'vim-scripts/taglist.vim'
 "NeoBundle 'vim-scripts/FuzzyFinder'
 "NeoBundle 'vim-scripts/L9'
 NeoBundle 'chusiang/vim-sdcv'				"字典
+NeoBundle 'bling/vim-airline'
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -143,22 +144,33 @@ set pastetoggle=<F12>						"縮排快速開關，貼上文字時使用，防止�
 " statusline
 "---------------------------------------------------------------------------
 set laststatus=2
-set statusline=%4*%<\ %1*[%F]
-set statusline+=%4*\ %5*[%{&encoding}, " encoding
-set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
-set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
-highlight User1 ctermfg=red
-highlight User2 term=underline cterm=underline ctermfg=green
-highlight User3 term=underline cterm=underline ctermfg=yellow
-highlight User4 term=underline cterm=underline ctermfg=white
-highlight User5 ctermfg=cyan
-highlight User6 ctermfg=white
+"set statusline=%4*%<\ %1*[%F]
+"set statusline+=%4*\ %5*[%{&encoding}, " encoding
+"set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
+"set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+"highlight User1 ctermfg=red
+"highlight User2 term=underline cterm=underline ctermfg=green
+"highlight User3 term=underline cterm=underline ctermfg=yellow
+"highlight User4 term=underline cterm=underline ctermfg=white
+"highlight User5 ctermfg=cyan
+"highlight User6 ctermfg=white
+
+"Aboout AirLine Start
+let g:airline_theme = 'murmur'
+let g:airline_powerline_fonts = 0 
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" About AirLine End
 
 "---------------------------------------------------------------------------
 " package settings
 "---------------------------------------------------------------------------
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
-
 let NERDTreeIgnore = ['\.pyc$']
+let Tlist_Use_Right_Window   = 1
+
 
