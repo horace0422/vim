@@ -28,15 +28,13 @@ NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
 NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換
 NeoBundle 'kana/vim-fakeclip'				
-NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'rkulla/pydiction.git'
+NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
+NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
 NeoBundle 'vim-scripts/AutoComplPop'
-NeoBundle 'vim-scripts/Pydiction'
-NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'vim-scripts/taglist.vim'			"function tag list
 "NeoBundle 'vim-scripts/FuzzyFinder'
 "NeoBundle 'vim-scripts/L9'
-NeoBundle 'chusiang/vim-sdcv'				"字典
-NeoBundle 'bling/vim-airline'
+NeoBundle 'bling/vim-airline'				"下面狀態列
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -49,7 +47,7 @@ filetype plugin indent on
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
-
+"NeoBundleUpdate
 
 "---------------------------------------------------------------------------
 " Encoding
@@ -82,11 +80,12 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 filetype on                "文件类型检测，自動判斷要載入的語法補完
 syntax on
 "colorscheme zenburn
-colorscheme obsidian
-"colorscheme codeschool
+"colorscheme obsidian
+colorscheme jellybeans
+
 set t_Co=256
 set guifont=Monaco:h11
-"
+
 "---------------------------------------------------------------------------
 " Tab and Spacebar
 "---------------------------------------------------------------------------
@@ -165,3 +164,17 @@ let NERDTreeIgnore = ['\.pyc$']
 let Tlist_Use_Right_Window   = 1
 
 
+"---------------------------------------------------------------------------
+" function
+"---------------------------------------------------------------------------
+function! SearchWord()
+	let expl=system('sdcv -n ' .
+				\  expand("<cword>"))
+	windo if
+				\ expand("%")=="diCt-tmp" |
+				\ q!|endif
+	25vsp diCt-tmp
+	setlocal buftype=nofile bufhidden=hide noswapfile
+	1s/^/\=expl/
+	1
+endfunction
