@@ -121,25 +121,16 @@ set history=1000
 set clipboard=unnamedplus  "同少剪貼簿，相關套件 sudo apt-get install vim-gtk
 "set fdm=indent
 
-"sdcv
-function! Mydict()
-	let expl=system('sdcv -n ' . expand("<cword>"))
-	windo if expand("%")=="diCt-tmp" | q!|endif
-	25vsp diCt-tmp
-	setlocal buftype=nofile bufhidden=hide noswapfile
-	1s/^/\=expl/
-	1
-endfunction
-nmap F :call Mydict()<CR>
 "---------------------------------------------------------------------------
 " Shortcuts
 "---------------------------------------------------------------------------
-"nnoremap <silent> <F5> :NERDTree<CR>
+map<F3> :call SearchWord()<CR>
+map<F4> :q<CR>
 map<F5> :NERDTreeToggle<CR>
 map<F6> :TlistToggle<CR>
-"nmap <leader>w :call SearchWord()<CR>
-set pastetoggle=<F12>						"縮排快速開關，貼上文字時使用，防止自動縮排
 
+set pastetoggle=<F12>						"縮排快速開關，貼上文字時使用，防止自動縮排
+"set keywordprg=sdcv
 "---------------------------------------------------------------------------
 " statusline
 "---------------------------------------------------------------------------
