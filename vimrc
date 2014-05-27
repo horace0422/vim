@@ -28,13 +28,15 @@ NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
 NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換
 NeoBundle 'kana/vim-fakeclip'				
-NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
 NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
 NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'vim-scripts/taglist.vim'			"function tag list
-"NeoBundle 'vim-scripts/FuzzyFinder'
-"NeoBundle 'vim-scripts/L9'
 NeoBundle 'bling/vim-airline'				"下面狀態列
+NeoBundle 'c9s/colorselector.vim'			"語法突顯選擇器 SelectColorS, EditCurrentColorS
+NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
+
+NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
+NeoBundle 'vim-scripts/php.vim'				"php 語法補完
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -77,7 +79,7 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 "---------------------------------------------------------------------------
 " Theme
 "---------------------------------------------------------------------------
-filetype on                "文件类型检测，自動判斷要載入的語法補完
+filetype indent on                "文件类型检测，自動判斷要載入的語法補完
 syntax on
 "colorscheme zenburn
 "colorscheme obsidian
@@ -105,7 +107,7 @@ set smartindent            "智能对齐方式
 "set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s     " 设置C/C++语言的具体缩进方式
 set wrap                   "自动换行
 set linebreak              "整词换行
-set mouse=a
+set mouse=vn
 set number                "行號
 set cursorline             "游標水平線
 "set cursorcolumn          "游標重直線
@@ -178,3 +180,9 @@ function! SearchWord()
 	1s/^/\=expl/
 	1
 endfunction
+
+
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+		\| exe "normal! g'\"" | endif
+endif
