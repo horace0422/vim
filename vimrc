@@ -147,7 +147,25 @@ set laststatus=2
 "highlight User5 ctermfg=cyan
 "highlight User6 ctermfg=white
 
-"Aboout AirLine Start
+"---------------------------------------------------------------------------
+" package settings
+"---------------------------------------------------------------------------
+"pydiction
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+let g:pydiction_menu_height = 20
+
+"NERDTree
+let NERDTreeIgnore = ['\.pyc$']
+
+"taglist
+let Tlist_Use_Right_Window   = 1
+
+"ctrlp
+let g:ctrlp_clear_cache_on_exit = 0						"離開 vim 後不要清 cache
+let g:ctrlp_max_files = 100000							"加大 cache 索引的檔案數, 否則會漏找檔案
+let g:ctrlp_user_command = 'find %s -type f'			"使用 find 加速建索引的速度
+
+"AirLine
 let g:airline_theme = 'murmur'
 let g:airline_powerline_fonts = 0 
 let g:airline_left_sep = ''
@@ -155,16 +173,6 @@ let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-" About AirLine End
-
-"---------------------------------------------------------------------------
-" package settings
-"---------------------------------------------------------------------------
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-let g:pydiction_menu_height = 20
-let NERDTreeIgnore = ['\.pyc$']
-let Tlist_Use_Right_Window   = 1
-
 
 "---------------------------------------------------------------------------
 " function
