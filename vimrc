@@ -82,8 +82,8 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 filetype indent on                "文件类型检测，自動判斷要載入的語法補完
 syntax on
 "colorscheme zenburn
-"colorscheme obsidian
-colorscheme jellybeans
+colorscheme obsidian
+"colorscheme jellybeans
 
 set t_Co=256
 set guifont=Monaco:h11

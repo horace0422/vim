@@ -1,4 +1,4 @@
-" Vim color file
+olor file
 "
 "  "    __       _ _       _                             "
 "  "    \ \  ___| | |_   _| |__   ___  __ _ _ __  ___    "
@@ -488,4 +488,4 @@ delf s:rgb_number
 delf s:grey_color
 delf s:grey_level
 delf s:grey_number
-" }}}
+"
