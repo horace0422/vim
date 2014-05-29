@@ -34,6 +34,7 @@ NeoBundle 'vim-scripts/taglist.vim'			"function tag list
 NeoBundle 'bling/vim-airline'				"下面狀態列
 NeoBundle 'c9s/colorselector.vim'			"語法突顯選擇器 SelectColorS, EditCurrentColorS
 NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
+NeoBundle 'scrooloose/syntastic'			"語法檢查
 
 NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
 NeoBundle 'vim-scripts/php.vim'				"php 語法補完
@@ -42,7 +43,7 @@ NeoBundle 'vim-scripts/php.vim'				"php 語法補完
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 call neobundle#end()
-
+y
 " Required:
 filetype plugin indent on
 
@@ -174,6 +175,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
+"scrooloose/syntastic
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_aggregate_errors = 1
 "---------------------------------------------------------------------------
 " function
 "---------------------------------------------------------------------------
