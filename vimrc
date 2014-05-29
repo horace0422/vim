@@ -24,12 +24,12 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My Bundles here:
+"NeoBundle 'vim-scripts/AutoComplPop'		"字詞補完
 NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
 NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換
 NeoBundle 'kana/vim-fakeclip'				
 NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
-NeoBundle 'vim-scripts/AutoComplPop'
 NeoBundle 'vim-scripts/taglist.vim'			"function tag list
 NeoBundle 'bling/vim-airline'				"下面狀態列
 NeoBundle 'c9s/colorselector.vim'			"語法突顯選擇器 SelectColorS, EditCurrentColorS
@@ -43,7 +43,7 @@ NeoBundle 'vim-scripts/php.vim'				"php 語法補完
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
 call neobundle#end()
-y
+
 " Required:
 filetype plugin indent on
 
@@ -151,6 +151,9 @@ set laststatus=2
 "---------------------------------------------------------------------------
 " package settings
 "---------------------------------------------------------------------------
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
 "pydiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 20
