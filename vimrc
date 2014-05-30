@@ -27,17 +27,18 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "NeoBundle 'vim-scripts/AutoComplPop'		"字詞補完
 NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
-NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換
-NeoBundle 'kana/vim-fakeclip'				
+NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換 \be \bs \bv
 NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
 NeoBundle 'vim-scripts/taglist.vim'			"function tag list
 NeoBundle 'bling/vim-airline'				"下面狀態列
-NeoBundle 'c9s/colorselector.vim'			"語法突顯選擇器 SelectColorS, EditCurrentColorS
+NeoBundle 'c9s/colorselector.vim'			"配色選擇器 SelectColorS, EditCurrentColorS
 NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
-NeoBundle 'scrooloose/syntastic'			"語法檢查
 
 NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
 NeoBundle 'vim-scripts/php.vim'				"php 語法補完
+
+NeoBundle 'scrooloose/syntastic'			"語法檢查
+NeoBundle 'tomtom/checksyntax_vim'			"語法檢查
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -175,7 +176,7 @@ let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "scrooloose/syntastic
