@@ -87,7 +87,8 @@ set t_Co=256
 
 if has('gui_running')
 	"Gvim
-	colorscheme wombat256mod
+	"colorscheme wombat256mod
+	colorscheme obsidian2
 	set guifont=Monaco\ 11
 else
 	"Vim
