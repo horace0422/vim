@@ -26,6 +26,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 "NeoBundle 'vim-scripts/AutoComplPop'		"字詞補完
 NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
+"NeoBundle 'Shougo/neocomplete.vim'			"字詞補完 新版
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
 NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換 \be \bs \bv
 NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
@@ -162,6 +163,10 @@ set laststatus=2
 "---------------------------------------------------------------------------
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+"let g:neocomplcache_enable_smart_case = 2
+
+"neocomplete
+"let g:neocomplete#enable_at_startup = 1
 
 "pydiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
@@ -200,13 +205,13 @@ function! SearchWord()
 	windo if
 				\ expand("%")=="diCt-tmp" |
 				\ q!|endif
-	25vsp diCt-tmp
+	10sp diCt-tmp
 	setlocal buftype=nofile bufhidden=hide noswapfile
 	1s/^/\=expl/
 	1
 endfunction
 
-
+" 開啟檔案時停留在上次開啟的行數
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 		\| exe "normal! g'\"" | endif
