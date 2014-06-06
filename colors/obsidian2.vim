@@ -21,7 +21,7 @@ let s:Colors = [
 
 " Syntax
 execute "hi Normal  guifg="     . s:Colors[1]  . " guibg=" . s:Colors[12] . " gui=none"
-execute "hi Comment guifg="     . s:Colors[8]  . " guibg=" . s:Colors[12] . " gui=italic"
+execute "hi Comment guifg="     . s:Colors[8]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi Conditional guifg=" . s:Colors[2]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi Constant guifg="    . s:Colors[1]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi Error guifg="       . s:Colors[7]  . " guibg=" . s:Colors[12] . " gui=none"
@@ -56,8 +56,8 @@ execute "hi MatchParen guifg="  . s:Colors[12] . " guibg=" . s:Colors[11] . " gu
 execute "hi ModeMsg guifg="     . s:Colors[5]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi MoreMsg guifg="     . s:Colors[5]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi NonText guifg="     . s:Colors[1]  . " guibg=" . s:Colors[12] . " gui=none"
-execute "hi Pmenu guifg="       . s:Colors[12] . " guibg=" . s:Colors[9]  . " gui=none"
-execute "hi PmenuSel guifg="    . s:Colors[12] . " guibg=" . s:Colors[17] . " gui=none"
+execute "hi Pmenu guifg="       . s:Colors[12] . " guibg=" . s:Colors[17]  . " gui=none"
+execute "hi PmenuSel guifg="    . s:Colors[3] . " guibg=" . s:Colors[9] . " gui=none"
 execute "hi Question guifg="    . s:Colors[0]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi Search guifg="      . s:Colors[13] . " guibg=" . s:Colors[16] . " gui=none"
 execute "hi SpecialKey guifg="  . s:Colors[13] . " guibg=" . s:Colors[12] . " gui=none"
