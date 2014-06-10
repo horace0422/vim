@@ -27,20 +27,24 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "NeoBundle 'vim-scripts/AutoComplPop'		"字詞補完
 NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
 "NeoBundle 'Shougo/neocomplete.vim'			"字詞補完 新版
+"
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
+NeoBundle 'mileszs/ack.vim'				"取代vimgrep功能
+NeoBundle 'dyng/ctrlsf.vim'					"類似sublime text  ctrlp+shift+f
 NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換 \be \bs \bv
 NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
 NeoBundle 'vim-scripts/taglist.vim'			"function tag list
 NeoBundle 'bling/vim-airline'				"下面狀態列
 NeoBundle 'c9s/colorselector.vim'			"配色選擇器 SelectColorS, EditCurrentColorS
 NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
-NeoBundle 'vim-scripts/Visual-Mark'			"書籤功能
+NeoBundle 'vim-scripts/Visual-Mark'			"書籤功能, <F2> Ctrl+<F2> Shift+<F2>
+NeoBundle 'jiangmiao/auto-pairs'			"括號補全
+NeoBundle 'othree/xml.vim'					"tag補全，包含HTML
 
 NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
 NeoBundle 'vim-scripts/php.vim'				"php 語法補完
 
 NeoBundle 'scrooloose/syntastic'			"語法檢查
-NeoBundle 'tomtom/checksyntax_vim'			"語法檢查
 
 " You can specify revision/branch/tag.
 "NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -110,6 +114,14 @@ set shiftwidth=4           " 縮排空白數，要搭配set cin使用
 set tabstop=4              " tab使用空白取代
 
 "---------------------------------------------------------------------------
+" Folding
+"---------------------------------------------------------------------------
+set foldenable 
+set foldmethod=syntax 
+set foldcolumn=0 
+nnoremap @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')
+
+"---------------------------------------------------------------------------
 " Other
 "---------------------------------------------------------------------------
 set autoread               "正在編輯文件被其它程序改動時reload
@@ -131,7 +143,7 @@ set nocompatible           "用vim的特性去運行，捨棄vi的特性
 set hlsearch               "搜尋反白
 set incsearch              "搜尋即時查找
 set history=1000
-set clipboard=unnamedplus  "同少剪貼簿，相關套件 sudo apt-get install vim-gtk
+set clipboard=unnamedplus  "同步剪貼簿，相關套件 sudo apt-get install vim-gtk
 "set fdm=indent
 
 "---------------------------------------------------------------------------
@@ -171,13 +183,18 @@ let g:neocomplcache_enable_at_startup = 1
 
 "pydiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-let g:pydiction_menu_height = 20
+let g:pydiction_menu_height = 12
 
 "NERDTree
 let NERDTreeIgnore = ['\.pyc$']
 
+"Ack
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 "taglist
-let Tlist_Use_Right_Window   = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Show_One_File = 1								"只顯示當前檔案
+let Tlist_Exit_OnlyWindow = 1							"如果taglist是最後窗口，直接關閉vim
 
 "ctrlp
 let g:ctrlp_clear_cache_on_exit = 0						"離開 vim 後不要清 cache
@@ -194,9 +211,10 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "scrooloose/syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_aggregate_errors = 1
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_aggregate_errors = 1
 "---------------------------------------------------------------------------
 " function
 "---------------------------------------------------------------------------
