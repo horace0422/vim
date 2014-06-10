@@ -34,6 +34,7 @@ NeoBundle 'vim-scripts/taglist.vim'			"function tag list
 NeoBundle 'bling/vim-airline'				"下面狀態列
 NeoBundle 'c9s/colorselector.vim'			"配色選擇器 SelectColorS, EditCurrentColorS
 NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
+NeoBundle 'vim-scripts/Visual-Mark'			"書籤功能
 
 NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
 NeoBundle 'vim-scripts/php.vim'				"php 語法補完

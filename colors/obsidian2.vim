@@ -17,7 +17,7 @@ let s:Colors = [
 \'#e8e2b7','#d39745','#66747b',
 \'#678cb1','#5899c0','#5ab9be',
 \'#1A252A','#41515A','#f3db2e',
-\'#96cdcd','#5ec8e5','#91d6f8']
+\'#111111']
 
 " Syntax
 execute "hi Normal  guifg="     . s:Colors[1]  . " guibg=" . s:Colors[12] . " gui=none"
@@ -50,16 +50,16 @@ execute "hi Directory guifg="   . s:Colors[10] . " guibg=" . s:Colors[12] . " gu
 execute "hi ErrorMsg guifg="    . s:Colors[13] . " guibg=" . s:Colors[7]  . " gui=none"
 execute "hi FoldColumn guifg="  . s:Colors[13] . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi Folded guifg="      . s:Colors[12] . " guibg=" . s:Colors[11] . " gui=none"
-execute "hi IncSearch guifg="   . s:Colors[13] . " guibg=" . s:Colors[15] . " gui=none"
+execute "hi IncSearch guifg="   . s:Colors[15] . " guibg=" . s:Colors[14] . " gui=none"
 execute "hi LineNr guifg="      . s:Colors[8]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi MatchParen guifg="  . s:Colors[12] . " guibg=" . s:Colors[11] . " gui=none"
 execute "hi ModeMsg guifg="     . s:Colors[5]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi MoreMsg guifg="     . s:Colors[5]  . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi NonText guifg="     . s:Colors[1]  . " guibg=" . s:Colors[12] . " gui=none"
-execute "hi Pmenu guifg="       . s:Colors[12] . " guibg=" . s:Colors[17]  . " gui=none"
-execute "hi PmenuSel guifg="    . s:Colors[3] . " guibg=" . s:Colors[9] . " gui=none"
+execute "hi Pmenu guifg="       . s:Colors[1] . " guibg=" . s:Colors[15]  . " gui=none"
+execute "hi PmenuSel guifg="    . s:Colors[14] . " guibg=" . s:Colors[13] . " gui=none"
 execute "hi Question guifg="    . s:Colors[0]  . " guibg=" . s:Colors[12] . " gui=none"
-execute "hi Search guifg="      . s:Colors[13] . " guibg=" . s:Colors[16] . " gui=none"
+execute "hi Search guifg="      . s:Colors[15] . " guibg=" . s:Colors[3] . " gui=none"
 execute "hi SpecialKey guifg="  . s:Colors[13] . " guibg=" . s:Colors[12] . " gui=none"
 execute "hi StatusLine guifg="  . s:Colors[1]  . " guibg=" . s:Colors[9]  . " gui=none"
 execute "hi StatusLineNC guifg=" . s:Colors[1] . " guibg=" . s:Colors[8]  . " gui=none"
