@@ -195,6 +195,9 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File = 1								"只顯示當前檔案
 let Tlist_Exit_OnlyWindow = 1							"如果taglist是最後窗口，直接關閉vim
+if(has("win32") || has("win64"))
+  let Tlist_Ctags_Cmd = expand('~/.vim/ctags.exe')
+endif
 
 "ctrlp
 let g:ctrlp_clear_cache_on_exit = 0						"離開 vim 後不要清 cache
