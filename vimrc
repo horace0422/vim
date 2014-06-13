@@ -27,9 +27,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "NeoBundle 'vim-scripts/AutoComplPop'		"字詞補完
 NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
 "NeoBundle 'Shougo/neocomplete.vim'			"字詞補完 新版
-"
+
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
-NeoBundle 'mileszs/ack.vim'				"取代vimgrep功能
+NeoBundle 'mileszs/ack.vim'					"取代vimgrep功能
 NeoBundle 'dyng/ctrlsf.vim'					"類似sublime text  ctrlp+shift+f
 NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換 \be \bs \bv
 NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
@@ -40,6 +40,9 @@ NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
 NeoBundle 'vim-scripts/Visual-Mark'			"書籤功能, <F2> Ctrl+<F2> Shift+<F2>
 NeoBundle 'jiangmiao/auto-pairs'			"括號補全
 NeoBundle 'othree/xml.vim'					"tag補全，包含HTML
+
+NeoBundle 'xolox/vim-misc'					"暫存最後修改資料
+NeoBundle 'xolox/vim-session'				"暫存最後修改資料
 
 NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
 NeoBundle 'vim-scripts/php.vim'				"php 語法補完
@@ -124,6 +127,8 @@ nnoremap @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')
 "---------------------------------------------------------------------------
 " Other
 "---------------------------------------------------------------------------
+set columns=120            "開啟時調整視窗寬度
+set lines=40               "開啟時調整視窗高度
 set autoread               "正在編輯文件被其它程序改動時reload
 set autoindent             "设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
 set smartindent            "智能对齐方式
@@ -132,7 +137,7 @@ set smartindent            "智能对齐方式
 set wrap                   "自动换行
 set linebreak              "整词换行
 set mouse=vn
-set number                "行號
+"set number                "行號
 set cursorline             "游標水平線
 "set cursorcolumn          "游標重直線
 "set colorcolumn=80
@@ -142,7 +147,7 @@ set showmatch              "顯示括號配對情況
 set nocompatible           "用vim的特性去運行，捨棄vi的特性
 set hlsearch               "搜尋反白
 set incsearch              "搜尋即時查找
-set history=1000
+set history=9999
 set clipboard=unnamedplus  "同步剪貼簿，相關套件 sudo apt-get install vim-gtk
 "set fdm=indent
 
@@ -189,7 +194,7 @@ let g:pydiction_menu_height = 12
 let NERDTreeIgnore = ['\.pyc$']
 
 "Ack
-let g:ackprg = 'ag --nogroup --nocolor --column'
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "taglist
 let Tlist_Use_Right_Window = 1
@@ -204,6 +209,10 @@ let g:ctrlp_clear_cache_on_exit = 0						"離開 vim 後不要清 cache
 let g:ctrlp_max_files = 100000							"加大 cache 索引的檔案數, 否則會漏找檔案
 let g:ctrlp_user_command = 'find %s -type f'			"使用 find 加速建索引的速度
 
+"session
+"let g:session_autosave = 'no'
+"let g:session_autoload = 'yes'
+
 "AirLine
 let g:airline_theme = 'murmur'
 let g:airline_powerline_fonts = 0 
@@ -216,7 +225,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 "scrooloose/syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 "---------------------------------------------------------------------------
 " function
