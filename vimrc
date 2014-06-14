@@ -1,96 +1,14 @@
-" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
-" Setting up Vundle - the vim plugin bundler
-
-let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
-if !filereadable(neobundle_readme)
-  echo "Installing Vundle.."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
-endif
-
-if has('vim_starting')
-    set nocompatible
-
-    " Required:
-    set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-"NeoBundle 'vim-scripts/AutoComplPop'		"字詞補完
-NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
-"NeoBundle 'Shougo/neocomplete.vim'			"字詞補完 新版
-
-NeoBundle 'scrooloose/nerdtree'				"檔案總管
-NeoBundle 'mileszs/ack.vim'					"取代vimgrep功能
-NeoBundle 'dyng/ctrlsf.vim'					"類似sublime text  ctrlp+shift+f
-NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換 \be \bs \bv
-NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
-NeoBundle 'vim-scripts/taglist.vim'			"function tag list
-NeoBundle 'bling/vim-airline'				"下面狀態列
-NeoBundle 'c9s/colorselector.vim'			"配色選擇器 SelectColorS, EditCurrentColorS
-NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
-NeoBundle 'vim-scripts/Visual-Mark'			"書籤功能, <F2> Ctrl+<F2> Shift+<F2>
-NeoBundle 'jiangmiao/auto-pairs'			"括號補全
-NeoBundle 'othree/xml.vim'					"tag補全，包含HTML
-
-NeoBundle 'xolox/vim-misc'					"暫存最後修改資料
-NeoBundle 'xolox/vim-session'				"暫存最後修改資料
-
-NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
-NeoBundle 'vim-scripts/php.vim'				"php 語法補完
-
-NeoBundle 'scrooloose/syntastic'			"語法檢查
-
-" You can specify revision/branch/tag.
-"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-"NeoBundleUpdate
-
 "---------------------------------------------------------------------------
 " Encoding
 "---------------------------------------------------------------------------
-set encoding=utf-8
+set encoding=utf-8                                  
 set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
-
-"fun! ViewUTF8()
-"	set encoding=utf-8
-"	set termencoding=big5
-"endfun
-
-"fun! UTF8()
-"	set encoding=utf-8
-"	set termencoding=big5
-"	set fileencoding=utf-8
-"	set fileencodings=ucs-bom,big5,utf-8,latin1
-"endfun
-
-"fun! Big5()
-"	set encoding=big5
-"	set fileencoding=big5
-"endfun
-
 "---------------------------------------------------------------------------
 " Theme
 "---------------------------------------------------------------------------
-filetype indent on                "文件类型检测，自動判斷要載入的語法補完
+filetype plugin indent on                "文件类型检测，自動判斷要載入的語法補完
 syntax on
 set t_Co=256
 
@@ -128,7 +46,7 @@ nnoremap @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')
 " Other
 "---------------------------------------------------------------------------
 set columns=120            "開啟時調整視窗寬度
-set lines=40               "開啟時調整視窗高度
+set lines=30               "開啟時調整視窗高度
 set autoread               "正在編輯文件被其它程序改動時reload
 set autoindent             "设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
 set smartindent            "智能对齐方式
@@ -150,6 +68,62 @@ set incsearch              "搜尋即時查找
 set history=9999
 set clipboard=unnamedplus  "同步剪貼簿，相關套件 sudo apt-get install vim-gtk
 "set fdm=indent
+
+"---------------------------------------------------------------------------
+" Encoding
+"---------------------------------------------------------------------------
+" http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
+" Setting up Vundle - the vim plugin bundler
+
+let neobundle_readme=expand('~/.vim/bundle/neobundle.vim/README.md')
+if !filereadable(neobundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/Shougo/neobundle.vim.git ~/.vim/bundle/neobundle.vim
+endif
+
+if has('vim_starting')
+    set nocompatible
+    set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+"NeoBundle 'vim-scripts/AutoComplPop'		"字詞補完
+NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
+"NeoBundle 'Shougo/neocomplete.vim'			"字詞補完 新版
+
+NeoBundle 'scrooloose/nerdtree'				"檔案總管
+NeoBundle 'mileszs/ack.vim'					"取代vimgrep功能
+NeoBundle 'dyng/ctrlsf.vim'					"類似sublime text  ctrlp+shift+f
+NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換 \be \bs \bv
+NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
+NeoBundle 'vim-scripts/taglist.vim'			"function tag list
+NeoBundle 'bling/vim-airline'				"下面狀態列
+NeoBundle 'c9s/colorselector.vim'			"配色選擇器 SelectColorS, EditCurrentColorS
+NeoBundle 'ap/vim-css-color'				"CSS 顏色顯示
+NeoBundle 'vim-scripts/Visual-Mark'			"書籤功能, <F2> Ctrl+<F2> Shift+<F2>
+NeoBundle 'jiangmiao/auto-pairs'			"括號補全
+NeoBundle 'othree/xml.vim'					"tag補全，包含HTML
+NeoBundle 'xolox/vim-misc'					"暫存最後修改資料
+NeoBundle 'xolox/vim-session'				"暫存最後修改資料
+NeoBundle 'rkulla/pydiction'				"python 語法補完 tab
+NeoBundle 'vim-scripts/php.vim'				"php 語法補完
+NeoBundle 'scrooloose/syntastic'			"語法檢查
+
+" You can specify revision/branch/tag.
+"NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+call neobundle#end()
+
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"NeoBundleUpdate
 
 "---------------------------------------------------------------------------
 " Shortcuts
