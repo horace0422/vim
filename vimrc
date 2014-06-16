@@ -1,76 +1,5 @@
 "---------------------------------------------------------------------------
-" Encoding
-"---------------------------------------------------------------------------
-set encoding=utf-8                                  
-set termencoding=utf-8
-set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
-"---------------------------------------------------------------------------
-" Theme
-"---------------------------------------------------------------------------
-filetype plugin indent on                "文件类型检测，自動判斷要載入的語法補完
-syntax on
-set t_Co=256
-
-if has('gui_running')
-	"Gvim
-	"colorscheme wombat256mod
-	colorscheme obsidian2
-	set guifont=Monaco\ 11
-else
-	"Vim
-	"colorscheme zenburn
-	"colorscheme jellybeans
-	colorscheme obsidian
-	set guifont=Monaco:h11
-endif
-
-"---------------------------------------------------------------------------
-" Tab and Spacebar
-"---------------------------------------------------------------------------
-set list
-set listchars=tab:>_,trail:.
-set cin
-set shiftwidth=4           " 縮排空白數，要搭配set cin使用
-set tabstop=4              " tab使用空白取代
-
-"---------------------------------------------------------------------------
-" Folding
-"---------------------------------------------------------------------------
-set foldenable 
-set foldmethod=syntax 
-set foldcolumn=0 
-nnoremap @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')
-
-"---------------------------------------------------------------------------
-" Other
-"---------------------------------------------------------------------------
-set columns=120            "開啟時調整視窗寬度
-set lines=30               "開啟時調整視窗高度
-set autoread               "正在編輯文件被其它程序改動時reload
-set autoindent             "设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
-set smartindent            "智能对齐方式
-"set cindent               "使用 C/C++ 语言的自动缩进方式
-"set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s     " 设置C/C++语言的具体缩进方式
-set wrap                   "自动换行
-set linebreak              "整词换行
-set mouse=vn
-"set number                "行號
-set cursorline             "游標水平線
-"set cursorcolumn          "游標重直線
-"set colorcolumn=80
-set textwidth=0
-set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
-set showmatch              "顯示括號配對情況
-set nocompatible           "用vim的特性去運行，捨棄vi的特性
-set hlsearch               "搜尋反白
-set incsearch              "搜尋即時查找
-set history=9999
-set clipboard=unnamedplus  "同步剪貼簿，相關套件 sudo apt-get install vim-gtk
-"set fdm=indent
-
-"---------------------------------------------------------------------------
-" Encoding
+" NeoBundle
 "---------------------------------------------------------------------------
 " http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/
 " Setting up Vundle - the vim plugin bundler
@@ -124,6 +53,76 @@ call neobundle#end()
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "NeoBundleUpdate
+
+"---------------------------------------------------------------------------
+" Encoding
+"---------------------------------------------------------------------------
+set encoding=utf-8                                  
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+"---------------------------------------------------------------------------
+" Theme
+"---------------------------------------------------------------------------
+if has('gui_running')
+	"Gvim
+	"colorscheme wombat256mod
+	colorscheme Tomorrow-Night-Eighties
+	set guifont=Monaco\ 11
+else
+	"Vim
+	"colorscheme zenburn
+	"colorscheme obsidian
+	colorscheme Tomorrow-Night-Eighties
+	set guifont=Monaco:h11
+endif
+
+"---------------------------------------------------------------------------
+" Tab and Spacebar
+"---------------------------------------------------------------------------
+set list
+set listchars=tab:>_,trail:.
+set cin
+set shiftwidth=4           " 縮排空白數，要搭配set cin使用
+set tabstop=4              " tab使用空白取代
+
+"---------------------------------------------------------------------------
+" Folding
+"---------------------------------------------------------------------------
+set foldenable 
+set foldmethod=syntax 
+set foldcolumn=0 
+nnoremap @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')
+
+"---------------------------------------------------------------------------
+" Other
+"---------------------------------------------------------------------------
+filetype plugin indent on                "文件类型检测，自動判斷要載入的語法補完
+syntax on
+set t_Co=256
+
+set columns=120            "開啟時調整視窗寬度
+set lines=30               "開啟時調整視窗高度
+set autoread               "正在編輯文件被其它程序改動時reload
+set autoindent             "设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
+set smartindent            "智能对齐方式
+"set cindent               "使用 C/C++ 语言的自动缩进方式
+"set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s     " 设置C/C++语言的具体缩进方式
+set wrap                   "自动换行
+set linebreak              "整词换行
+set mouse=vn
+"set number                "行號
+set cursorline             "游標水平線
+"set cursorcolumn          "游標重直線
+"set colorcolumn=80
+set textwidth=0
+set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
+set showmatch              "顯示括號配對情況
+set nocompatible           "用vim的特性去運行，捨棄vi的特性
+set hlsearch               "搜尋反白
+set incsearch              "搜尋即時查找
+set history=9999
+set clipboard=unnamedplus  "同步剪貼簿，相關套件 sudo apt-get install vim-gtk
 
 "---------------------------------------------------------------------------
 " Shortcuts
