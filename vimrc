@@ -67,13 +67,13 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 if has('gui_running')
 	"Gvim
 	"colorscheme wombat256mod
-	colorscheme Tomorrow-Night-Eighties
+	colorscheme Tomorrow-Night
 	set guifont=Monaco\ 11
 else
 	"Vim
 	"colorscheme zenburn
 	"colorscheme obsidian
-	colorscheme Tomorrow-Night-Eighties
+	colorscheme Tomorrow-Night
 	set guifont=Monaco:h11
 endif
 
@@ -114,7 +114,7 @@ set mouse=vn
 "set number                "行號
 set cursorline             "游標水平線
 "set cursorcolumn          "游標重直線
-"set colorcolumn=80
+set colorcolumn=80
 set textwidth=0
 set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
 set showmatch              "顯示括號配對情況
