@@ -28,7 +28,6 @@ NeoBundle 'Shougo/neocomplcache.vim'		"字詞補完，查找專案內的檔案
 "NeoBundle 'Shougo/neocomplete.vim'			"字詞補完 新版
 
 NeoBundle 'scrooloose/nerdtree'				"檔案總管
-NeoBundle 'mileszs/ack.vim'					"取代vimgrep功能
 NeoBundle 'dyng/ctrlsf.vim'					"類似sublime text  ctrlp+shift+f
 NeoBundle 'jlanzarotta/bufexplorer'			"開啟的檔案切換 \be \bs \bv
 NeoBundle 'kien/ctrlp.vim'					"快速搜尋檔案名稱
@@ -83,10 +82,11 @@ endif
 "---------------------------------------------------------------------------
 set list
 set listchars=tab:>_,trail:.
-set cin
 set shiftwidth=4           " 縮排空白數，要搭配set cin使用
+set softtabstop=4
 set tabstop=4              " tab使用空白取代
-
+set noexpandtab
+set smartindent
 "---------------------------------------------------------------------------
 " Folding
 "---------------------------------------------------------------------------
@@ -115,7 +115,7 @@ set mouse=vn
 "set number                "行號
 set cursorline             "游標水平線
 "set cursorcolumn          "游標重直線
-"set colorcolumn=80
+set colorcolumn=80
 set textwidth=0
 set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
 set showmatch              "顯示括號配對情況
@@ -133,7 +133,7 @@ map<F3> :call SearchWord()<CR>
 map<F4> :q<CR>
 map<F5> :NERDTreeToggle<CR>
 map<F6> :TlistToggle<CR>
-
+map <leader>il :IndentLinesToggle<CR>
 set pastetoggle=<F12>						"縮排快速開關，貼上文字時使用，防止自動縮排
 "set keywordprg=sdcv
 "---------------------------------------------------------------------------
@@ -168,9 +168,6 @@ let g:pydiction_menu_height = 12
 "NERDTree
 let NERDTreeIgnore = ['\.pyc$']
 
-"Ack
-"let g:ackprg = 'ag --nogroup --nocolor --column'
-
 "taglist
 let Tlist_Use_Right_Window = 1
 let Tlist_Show_One_File = 1								"只顯示當前檔案
@@ -181,7 +178,7 @@ endif
 
 "ctrlp
 let g:ctrlp_clear_cache_on_exit = 0						"離開 vim 後不要清 cache
-let g:ctrlp_max_files = 100000							"加大 cache 索引的檔案數, 否則會漏找檔案
+let g:ctrlp_max_files = 10000							"加大 cache 索引的檔案數, 否則會漏找檔案
 let g:ctrlp_user_command = 'find %s -type f'			"使用 find 加速建索引的速度
 
 "session
@@ -193,7 +190,7 @@ let g:airline_theme = 'murmur'
 let g:airline_powerline_fonts = 0 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0        "不顯示buffers
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
@@ -201,6 +198,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:syntastic_check_on_open = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 "---------------------------------------------------------------------------
 " function
 "---------------------------------------------------------------------------
