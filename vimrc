@@ -115,7 +115,7 @@ set mouse=vn
 "set number                "行號
 set cursorline             "游標水平線
 "set cursorcolumn          "游標重直線
-set colorcolumn=80
+"set colorcolumn=80
 set textwidth=0
 set backspace=2            "按下backspace會後退，道行首後會刪除到前一行
 set showmatch              "顯示括號配對情況
@@ -199,6 +199,19 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+
+
+"---------------------------------------------------------------------------
+" 開啟跟存檔時執行
+"---------------------------------------------------------------------------
+" 開啟檔案時停留在上次開啟的行數
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+		\| exe "normal! g'\"" | endif
+endif
+
+" 存檔時刪除多餘空白 tab
+autocmd BufWritePre * call RemoveTrailingWhitespace() 
 "---------------------------------------------------------------------------
 " function
 "---------------------------------------------------------------------------
@@ -214,8 +227,14 @@ function! SearchWord()
 	1
 endfunction
 
-" 開啟檔案時停留在上次開啟的行數
-if has("autocmd")
-	au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-		\| exe "normal! g'\"" | endif
-endif
+" Remove trailing whitespace when writing a buffer, but not for diff files.
+function RemoveTrailingWhitespace()
+    if &ft != "diff"
+        let b:curcol = col(".")
+        let b:curline = line(".")
+        silent! %s/\s\+$//
+        silent! %s/\(\s*\n\)\+\%$//
+        call cursor(b:curline, b:curcol)
+    endif
+endfunction
+
