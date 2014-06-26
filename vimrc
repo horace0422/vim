@@ -56,7 +56,7 @@ NeoBundleCheck
 "---------------------------------------------------------------------------
 " Encoding
 "---------------------------------------------------------------------------
-set encoding=utf-8                                  
+set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
@@ -75,6 +75,7 @@ else
 	"colorscheme obsidian
 	colorscheme Tomorrow-Night
 	set guifont=Monaco:h11
+	set t_Co=256
 endif
 
 "---------------------------------------------------------------------------
@@ -90,20 +91,16 @@ set smartindent
 "---------------------------------------------------------------------------
 " Folding
 "---------------------------------------------------------------------------
-set foldenable 
-set foldmethod=syntax 
-set foldcolumn=0 
-nnoremap @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')
+set foldenable
+set foldmethod=syntax
+set foldcolumn=0
 
 "---------------------------------------------------------------------------
 " Other
 "---------------------------------------------------------------------------
 filetype plugin indent on                "文件类型检测，自動判斷要載入的語法補完
 syntax on
-set t_Co=256
 
-set columns=120            "開啟時調整視窗寬度
-set lines=30               "開啟時調整視窗高度
 set autoread               "正在編輯文件被其它程序改動時reload
 set autoindent             "设置自动对齐(缩进)：即每行的缩进值与上一行相等；使用 noautoindent 取消设置
 set smartindent            "智能对齐方式
@@ -158,9 +155,6 @@ set laststatus=2
 let g:neocomplcache_enable_at_startup = 1
 "let g:neocomplcache_enable_smart_case = 2
 
-"neocomplete
-"let g:neocomplete#enable_at_startup = 1
-
 "pydiction
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 let g:pydiction_menu_height = 12
@@ -187,7 +181,7 @@ let g:session_autosave = 'no'
 
 "AirLine
 let g:airline_theme = 'murmur'
-let g:airline_powerline_fonts = 0 
+let g:airline_powerline_fonts = 0
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 0        "不顯示buffers
@@ -211,7 +205,7 @@ if has("autocmd")
 endif
 
 " 存檔時刪除多餘空白 tab
-autocmd BufWritePre * call RemoveTrailingWhitespace() 
+autocmd BufWritePre * call RemoveTrailingWhitespace()
 "---------------------------------------------------------------------------
 " function
 "---------------------------------------------------------------------------
@@ -228,7 +222,7 @@ function! SearchWord()
 endfunction
 
 " Remove trailing whitespace when writing a buffer, but not for diff files.
-function RemoveTrailingWhitespace()
+function! RemoveTrailingWhitespace()
     if &ft != "diff"
         let b:curcol = col(".")
         let b:curline = line(".")
@@ -237,4 +231,3 @@ function RemoveTrailingWhitespace()
         call cursor(b:curline, b:curcol)
     endif
 endfunction
-
